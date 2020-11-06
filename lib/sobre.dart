@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './contatos.dart';
+import './main.dart';
 void main() {
   runApp(Sobre());
 }
@@ -24,14 +26,15 @@ class Sobre extends StatelessWidget {
                       "img/printshoplogo.png",
                         fit: BoxFit.cover,
                         height: 100,),
+            decoration: BoxDecoration(color: Colors.lightBlue),
             ),
-            new ListTile(
-              leading: Icon(Icons.book),
-              title: new Text('Sobre'),
+             new ListTile(
+              leading: Icon(Icons.home),
+              title: new Text('Início'),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.push(context, new MaterialPageRoute(
-                  builder: (BuildContext context) => new Sobre())
+                  builder: (BuildContext context) => new MyApp())
                 );
               },
             ),
@@ -40,6 +43,21 @@ class Sobre extends StatelessWidget {
               height: 5.0,
             ),
             new ListTile(
+              leading: Icon(Icons.call),
+              title: new Text('Contatos'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(context, new MaterialPageRoute(
+                  builder: (BuildContext context) => new Contatos())
+                );
+              },
+            ),
+            new Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            new ListTile(
+              leading: Icon(Icons.book),
               title: new Text('Sobre'),
               onTap: () {
                 Navigator.of(context).pop();
