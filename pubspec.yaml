@@ -49,7 +49,12 @@ flutter:
   assets:
     - img/printshoplogo.png
     - img/devmachinelogo.png
-  #   - images/a_dot_ham.jpeg
+    - img/adesivo.jpg
+    - img/cartaovisita.jpg
+    - img/flyer.jpg
+    - img/cartaz.jpg
+    - img/folder.jpg
+    - img/mapa.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

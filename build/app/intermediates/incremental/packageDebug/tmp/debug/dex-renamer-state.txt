@@ -1,4 +1,4 @@
-#Fri Nov 06 01:42:00 BRST 2020
+#Sat Nov 07 01:40:18 BRST 2020
 base.0=F\:\\GAMES PC\\pendrive do gu\\AtividadesFATEC\\print_shop_manager_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

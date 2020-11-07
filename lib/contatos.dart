@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import './sobre.dart';
 import './main.dart';
+import './orcamento.dart';
 
 void main() {
   runApp(Contatos());
@@ -37,6 +38,20 @@ class Contatos extends StatelessWidget {
                 Navigator.of(context).pop();
                 Navigator.push(context, new MaterialPageRoute(
                   builder: (BuildContext context) => new MyApp())
+                );
+              },
+            ),
+            new Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            new ListTile(
+              leading: Icon(Icons.request_page),
+              title: new Text('Orçamento'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(context, new MaterialPageRoute(
+                  builder: (BuildContext context) => new Orcamento())
                 );
               },
             ),
@@ -101,7 +116,7 @@ class MyWidget extends StatelessWidget {
           title: new Text('Telefones: (11) 4656-5895/(11) 99978-5959'),
           ),
           new Divider(
-              color: Colors.black,
+              color: Colors.white,
               height: 20.0,
             ),
           new ListTile(

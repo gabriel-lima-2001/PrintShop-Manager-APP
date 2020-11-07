@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './contatos.dart';
 import './main.dart';
+import './orcamento.dart';
 void main() {
   runApp(Sobre());
 }
@@ -35,6 +36,20 @@ class Sobre extends StatelessWidget {
                 Navigator.of(context).pop();
                 Navigator.push(context, new MaterialPageRoute(
                   builder: (BuildContext context) => new MyApp())
+                );
+              },
+            ),
+            new Divider(
+              color: Colors.black,
+              height: 5.0,
+            ),
+            new ListTile(
+              leading: Icon(Icons.request_page),
+              title: new Text('Orçamento'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(context, new MaterialPageRoute(
+                  builder: (BuildContext context) => new Orcamento())
                 );
               },
             ),
