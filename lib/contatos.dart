@@ -24,6 +24,7 @@ class Contatos extends StatelessWidget {
         drawer: new Drawer(
         child: ListView(
           children: <Widget>[
+
             new DrawerHeader(child: 
             Image.asset(
                       "img/printshoplogo.png",
@@ -99,6 +100,26 @@ abrirGooglemaps() async {
     throw 'Could not launch Maps';
   }
 }
+abrirGmail() async {
+  final Uri params = Uri(
+    scheme: 'mailto',
+    path: 'suporte@printshopmanager.com.br',
+  );
+  String url = params.toString();
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    print('Could not launch $url');
+  }
+}
+fazerLigacao() async {
+  const url = "tel:(11)99978-5959";   
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -114,6 +135,9 @@ class MyWidget extends StatelessWidget {
         new ListTile(
           leading: Icon(Icons.call),
           title: new Text('Telefones: (11) 4656-5895/(11) 99978-5959'),
+          onTap: () {
+               fazerLigacao();
+              },
           ),
           new Divider(
               color: Colors.white,
@@ -122,6 +146,9 @@ class MyWidget extends StatelessWidget {
           new ListTile(
           leading: Icon(Icons.email),
           title: new Text('E-Mail: suporte@printshopmanager.com.br'),
+          onTap: () {
+               abrirGmail();
+              },
           ),
           new Divider(
               color: Colors.white,
@@ -130,22 +157,19 @@ class MyWidget extends StatelessWidget {
           new ListTile(
           leading: Icon(Icons.location_on),
           title: new Text('Endereço: Rua Carlos de Carvalho, 200, Ferraz de Vasconcelos - SP, 08545-160'),
+          onTap: () {
+               abrirGooglemaps();
+              },
           ),
-          new Divider(
+           new Divider(
               color: Colors.white,
               height: 20.0,
             ),
-          new ListTile(
-              leading: Icon(Icons.map,
-              color: Colors.white,),
-              title: new Text('Localização no Google Maps',
-              style: TextStyle(color: Colors.white),),
-              tileColor: Colors.blueAccent,
-              onTap: () {
-               abrirGooglemaps();
-              },
-            ),
-      ],
+        Text('Clique em um campo acima para ser redirecionado!',
+        style: TextStyle(fontSize: 15,
+        color: Colors.blueAccent),
+        ),
+      ],  
     );
   }
 }

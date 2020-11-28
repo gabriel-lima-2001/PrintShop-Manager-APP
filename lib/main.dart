@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import './sobre.dart';
 import './contatos.dart';
@@ -9,7 +10,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,12 +43,23 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Image.asset(
-        "img/printshoplogo.png",
-        fit: BoxFit.cover,
-        height: 400,
-        alignment: Alignment(0.0, 1.0),
-        ), 
+      body: Center(
+        child: CarouselSlider(
+  options: CarouselOptions(height: 400.0, autoPlay: true),
+  items: ["img/printshoplogo.png","img/adesivo.jpg","img/cartaovisita.jpg","img/flyer.jpg","img/cartaz.jpg",
+ "img/folder.jpg"].map((i) {
+    return Builder(
+      builder: (BuildContext context) {
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          margin: EdgeInsets.symmetric(horizontal: 5.0),
+          child: Image.asset(i)
+        );
+      },
+    );
+  }).toList(),
+),
+      ), 
       drawer: new Drawer(
         child: ListView(
           children: <Widget>[
